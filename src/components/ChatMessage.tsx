@@ -58,20 +58,23 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({ message, onButtonClick
         </Card>
         {buttonOptions && buttonOptions.length > 0 && (
           <div className="flex gap-2 mt-2">
-            {buttonOptions.map((button) => (
-              <Button 
-                key={button.label} 
-                onClick={() => onButtonClick?.(button.label)} 
-                disabled={message.responded}
-                className="flex items-center gap-2"
-                variant="outline"
-              >
-                {button.imageUrl && (
-                  <img src={button.imageUrl} alt={button.label} className="w-4 h-4 rounded" />
-                )}
-                {button.label}
-              </Button>
-            ))}
+            {buttonOptions.map((button) => {
+              const isSelected = message.selectedButton === button.label;
+              return (
+                <Button 
+                  key={button.label} 
+                  onClick={() => onButtonClick?.(button.label)} 
+                  disabled={message.responded}
+                  className="flex items-center gap-2"
+                  variant={isSelected ? "outline" : (message.responded ? "default" : "outline")}
+                >
+                  {button.imageUrl && (
+                    <img src={button.imageUrl} alt={button.label} className="w-4 h-4 rounded" />
+                  )}
+                  {button.label}
+                </Button>
+              );
+            })}
           </div>
         )}
         {message.LaptopRecommendations && message.LaptopRecommendations.length > 0 && (

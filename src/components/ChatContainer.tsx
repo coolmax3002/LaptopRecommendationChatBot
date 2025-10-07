@@ -33,7 +33,7 @@ export const ChatContainer = () => {
   const handleButtonClick = (choosenButtonValue: string, messageId: string) => {
     setMessages((prevMessages) => 
       prevMessages.map((msg) => 
-        msg.id === messageId ? { ...msg, responded: true } : msg
+        msg.id === messageId ? { ...msg, responded: true, selectedButton: choosenButtonValue } : msg
       )
     );
     const response = getNextBotResponse(conversationState, choosenButtonValue, userPreference);

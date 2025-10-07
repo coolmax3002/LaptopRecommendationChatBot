@@ -7,6 +7,7 @@ export interface MessageWithoutId {
   avatar?: string;
   name?: string;
   responded?: boolean;
+  selectedButton?: string;
   buttonOptions?: ButtonOptions[];
   LaptopRecommendations?: Laptop[];
 }

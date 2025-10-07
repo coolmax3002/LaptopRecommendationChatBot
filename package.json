@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist --dotfiles"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.10",
@@ -39,9 +40,5 @@
     "typescript-eslint": "^8.45.0",
     "vite": "^7.1.7"
   },
-  "homepage": "https://coolmax3002.github.io/LaptopRecommendationChatBot",
-  "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
-  }
+  "homepage": "https://coolmax3002.github.io/LaptopRecommendationChatBot"
 }

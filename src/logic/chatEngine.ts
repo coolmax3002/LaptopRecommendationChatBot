@@ -195,8 +195,8 @@ function parseUseCase(userInput: string): string | null {
     Gaming: ["game", "gaming", "video games"],
     General: ["school", "homework", "student", "college", "uni", "general", "day", "watch"],
     Work: ["office", "job", "work"],
-    Development: ["code", "dev", "program"],
-    Media: ["video", "media", "edit", "photo"],
+    Development: ["code", "dev", "program", "coding"],
+    Media: ["video", "media", "edit", "photo", "rendering"],
   };
 
   for (const [category, keywords] of Object.entries(keywordMap)) {
