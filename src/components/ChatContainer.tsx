@@ -6,6 +6,11 @@ import type { Message, MessageWithoutId } from "@/types/message";
 import { type UserPreferences, type ConversationState } from "@/types/chat";
 import { getNextBotResponse } from "@/logic/chatEngine";
 
+/**
+ * Main chat interface container
+ * Manages conversation state, message history, and user preferences
+ * Handles both button clicks and text input
+ */
 export const ChatContainer = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [nextId, setNextId] = useState<number>(2);

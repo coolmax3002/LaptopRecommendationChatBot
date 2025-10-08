@@ -9,16 +9,18 @@ interface MessageListProps {
   onButtonClick: (value: string, messageId: string) => void;
 }
 
+/**
+ * Displays chat message history with auto-scroll
+ * Uses radix scrollarea viewport to scroll within container
+ */
 export const MessageList: React.FC<MessageListProps> = ({ messages, onButtonClick}) => {
   const scrollAreaRef = useRef<HTMLDivElement>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Find the viewport within the ScrollArea
     const viewport = scrollAreaRef.current?.querySelector('[data-radix-scroll-area-viewport]');
     
     if (viewport) {
-      // Scroll to bottom smoothly within the ScrollArea only
       viewport.scrollTo({
         top: viewport.scrollHeight,
         behavior: "smooth"

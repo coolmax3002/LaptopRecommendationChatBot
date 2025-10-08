@@ -2,6 +2,11 @@ import type { ConversationState, UserPreferences } from "@/types/chat";
 import { type ButtonOptions, type MessageWithoutId } from "@/types/message";
 import { type Laptop, laptops } from "@/types/laptops";
 
+/**
+ * Main chatbot engine
+ * handles conversation flow through a state machine
+ * Each state asks a question, collects user preferences, and transitions to the next state
+ */
 export function getNextBotResponse (
   currentState: ConversationState,
   userResponse: string,
@@ -188,12 +193,15 @@ function createBotResponse(
   }
 }
 
+/**
+ * Fuzzy keyword matching to parse user's inputinto a category
+ */
 function parseUseCase(userInput: string): string | null {
   const sanitizedInput = userInput.toLowerCase();
 
   const keywordMap: Record<string, string[]> = {
     Gaming: ["game", "gaming", "video games"],
-    General: ["school", "homework", "student", "college", "uni", "general", "day", "watch"],
+    General: ["school", "homework", "student", "college", "uni", "general", "day", "watch", "youtube"],
     Work: ["office", "job", "work"],
     Development: ["code", "dev", "program", "coding"],
     Media: ["video", "media", "edit", "photo", "rendering"],
@@ -221,6 +229,9 @@ function parseScreenSize(userInput: string): string | null {
   return size.toString();
 }
 
+/**
+ * Filters laptop inventory based on user preferences
+ */
 function filterLaptops(userPreferences: UserPreferences): Laptop[] {
   console.log(userPreferences);
    return laptops.filter(laptop => {
