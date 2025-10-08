@@ -31,7 +31,7 @@ There are screenshots of a sample chat bot flow at the bottom of this README.
 ## Screenshots of Chatbot Flow
 These screenshots show the flow of the chat bot, highlighting the error handling and fallbacks.
 
-![Demo part 1](/src/assests/chatbot-demo-1.png)
-![Demo part 2](/src/assests/chatbot-demo-2.png)
-![Demo part 3](/src/assests/chatbot-demo-3.png)
+![Demo part 1](/src/assets/chatbot-demo-1.png)
+![Demo part 2](/src/assets/chatbot-demo-2.png)
+![Demo part 3](/src/assets/chatbot-demo-3.png)
 
