@@ -5,6 +5,10 @@ A conversational assistant that helps users find their perfect laptop through an
 You can try the chat bot for your self at this link!
 [Live Demo](https://coolmax3002.github.io/LaptopRecommendationChatBot/)
 
+![Demo part 1](/src/assests/chatbot-demo1.png)
+![Demo part 2](/src/assests/chatbot-demo2.png)
+
+
 ## Features
 -   **Hybrid Input System**: Combines button-based selections for simple choices with free-text input
 -   **Intelligent Error Handling**: Fuzzy text matching with fallbacks to structured options
